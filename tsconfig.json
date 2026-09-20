@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"target": "es2022",
+		"lib": ["es2022"],
+		"rewriteRelativeImportExtensions": false,
+		"verbatimModuleSyntax": true,
+		"isolatedModules": true,
+		"useUnknownInCatchVariables": true,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"strictNullChecks": true,
+		"resolveJsonModule": true,
+		"declaration": true,
+		"sourceMap": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+		"types": ["node", "vitest/globals"]
+	},
+	"include": ["src/**/*.ts", "test/**/*.ts", "vitest.config.ts"],
+	"exclude": ["dist/**", "node_modules/**"]
+}

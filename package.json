@@ -1,0 +1,65 @@
+{
+	"name": "@hodfords/expression-compiler",
+	"version": "1.0.0",
+	"description": "Compile and evaluate template expressions ({{ ... }}) against a data context.",
+	"keywords": [
+		"compiler",
+		"evaluator",
+		"expression",
+		"template"
+	],
+	"homepage": "https://github.com/hodfords-solutions/expression-compiler#readme",
+	"bugs": {
+		"url": "https://github.com/hodfords-solutions/expression-compiler/issues"
+	},
+	"license": "MIT",
+	"author": "Hodfords",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hodfords-solutions/expression-compiler.git"
+	},
+	"type": "module",
+	"main": "./index.js",
+	"types": "./index.d.ts",
+	"exports": {
+		".": {
+			"types": "./index.d.ts",
+			"import": "./index.js",
+			"default": "./index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"prebuild": "rm -rf dist",
+		"build": "tsc -p tsconfig.build.json",
+		"postbuild": "cp package.json README.md dist",
+		"typecheck": "tsc -p tsconfig.json --noEmit",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage",
+		"lint": "oxlint",
+		"lint:fix": "oxlint --fix",
+		"format": "oxfmt",
+		"format:check": "oxfmt --check"
+	},
+	"dependencies": {
+		"ast-types": "^0.16.1",
+		"esprima-next": "^6.0.3",
+		"recast": "^0.24.0"
+	},
+	"devDependencies": {
+		"@types/node": "^24.0.0",
+		"@vitest/coverage-v8": "^5.0.1",
+		"oxfmt": "^0.68.0",
+		"oxlint": "^1.83.0",
+		"typescript": "^7.0.2",
+		"vitest": "^5.0.1"
+	},
+	"engines": {
+		"node": ">=20"
+	},
+	"packageManager": "pnpm@12.1.0"
+}
